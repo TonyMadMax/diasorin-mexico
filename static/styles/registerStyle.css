@@ -1,0 +1,14 @@
+.jumbotron{
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.container{
+  margin-top: 20px;
+}
+label{
+  padding-top: 10px;
+  font-weight: bold;
+}

@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+{% load staticfiles %}
+  {% block style_block %}<link rel="stylesheet" href="/static/styles/registerStyle.css?{% now "U" %}">{% endblock %}
+  {% block body_block %}
+
+    <div class="jumbotron">
+      {% if registered %}
+      <div class="alert alert-success" role="alert">
+        <h2> Registro completo </h2>
+      </div>
+      {% else %}
+      <h2>Registrar Nuevo Usuario</h2>
+      <form class="" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.non_field_errors }}
+        {{ user_form.username.errors }}
+        <label for="{{ user_form.username.id_for_label }}">Nombre de Usuario</label>
+        <br>
+        {{ user_form.username }}
+        <br>
+        {{ user_form.email.errors }}
+        <label for="{{ user_form.email.id_for_label }}">Correo Electrónico</label>
+        <br>
+        {{ user_form.email }}
+        <br>
+        {{ user_form.password.errors }}
+        <label for="{{ user_form.password.id_for_label }}">Contraseña</label>
+        <br>
+        {{ user_form.password }}
+        <br>
+        <br>
+        {{ profile_form.as_p}}
+        <input type="submit" class="btn btn-primary"name="" value="Enviar">
+      </form>
+      {% endif  %}
+    </div>
+
+  {% endblock %}

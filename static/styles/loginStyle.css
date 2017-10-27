@@ -1,0 +1,14 @@
+.jumbotron {
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  width: 50%;
+  min-width: 300px;
+}
+
+.container {
+    width: 90%;
+}
+#logo {
+  margin-bottom: 16px;
+}
